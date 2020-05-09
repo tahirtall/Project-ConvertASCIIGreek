@@ -44,7 +44,20 @@ public class greekAlphabet {
 
     // Driver function
     public static void main(String args[]) {
-        System.out.println(toLower_greek(0x0391));
+        for(int wc=0x0391; wc<=0x03C9; wc++) {
+            if(wc >= 0x3AA && wc <= 0x3B0) {
+                continue;
+            }
+            if (wc == 0x3A2) {
+                continue;
+            }
+            if (isUpper_greek(wc) == 1) {
+                System.out.println("U+0" + wc + " is " + (char) wc + " : uppercase, lower case form: " + toLower_greek(wc));
+            }
+            if (isLower_greek(wc) == 1) {
+                System.out.println("U+0" + wc + " is " + (char) wc + " : lowercase, upper case form: " + toUpper_greek(wc));
+            }
+        }
     }
 
 }
