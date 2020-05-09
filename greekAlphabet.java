@@ -51,11 +51,15 @@ public class greekAlphabet {
             if (wc == 0x3A2) {
                 continue;
             }
+            if (wc == 0x03C2) {
+                System.out.println("U+0" + dec2Hex(wc) + " is " + (char) wc + " : lowercase, uppercase form: " + toUpper_greek(wc+1));
+                continue;
+            }
             if (isUpper_greek(wc) == 1) {
-                System.out.println("U+0" + wc + " is " + (char) wc + " : uppercase, lower case form: " + toLower_greek(wc));
+                System.out.println("U+0" + dec2Hex(wc) + " is " + (char) wc + " : uppercase, lowercase form: " + toLower_greek(wc));
             }
             if (isLower_greek(wc) == 1) {
-                System.out.println("U+0" + wc + " is " + (char) wc + " : lowercase, upper case form: " + toUpper_greek(wc));
+                System.out.println("U+0" + dec2Hex(wc) + " is " + (char) wc + " : lowercase, uppercase form: " + toUpper_greek(wc));
             }
         }
     }
